@@ -10,11 +10,11 @@
 1. `php artisan key:generate`
 1. Set your database credentials in your `.env` file
 1. Set your Stripe credentials in your `.env` file. Specifically `STRIPE_KEY` and `STRIPE_SECRET`
-1. Set your Algolia credentials in your `.env` file. Specifically `ALGOLIA_APP_ID` and `ALGOLIA_SECRET`. See [this episode](https://www.youtube.com/watch?v=Sa0R_2aHICw&index=22&list=PLEhEHUEU3x5oPTli631ZX9cxl6cU_sDaR).
-1. Set your Braintree credentials in your `.env` file if you want to use PayPal. Specifically `BT_MERCHANT_ID`, `BT_PUBLIC_KEY`, `BT_PRIVATE_KEY`. See [this episode](https://www.youtube.com/watch?v=pv8pxwBxfA4). If you don't, it should still work but won't show the paypal payment at checkout.
+1. Set your Algolia credentials in your `.env` file. Specifically `ALGOLIA_APP_ID` and `ALGOLIA_SECRET`.
+1. Set your Braintree credentials in your `.env` file if you want to use PayPal. Specifically `BT_MERCHANT_ID`, `BT_PUBLIC_KEY`, `BT_PRIVATE_KEY`.
 1. Set your `APP_URL` in your `.env` file. This is needed for Voyager to correctly resolve asset URLs.
 1. Set `ADMIN_PASSWORD` in your `.env` file if you want to specify an admin password. If not, the default password is 'password'
-1. `php artisan ecommerce:install`. This will migrate the database and run any seeders necessary. See [this episode](https://www.youtube.com/watch?v=L3EbWJmmyjo&index=18&list=PLEhEHUEU3x5oPTli631ZX9cxl6cU_sDaR).
+1. `php artisan ecommerce:install`. This will migrate the database and run any seeders necessary.
 1. `npm install`
 1. `npm run dev`
 1. `php artisan serve` or use Laravel Valet or Laravel Homestead
@@ -25,6 +25,6 @@
 
 I originally used the [Crinsane/LaravelShoppingcart](https://github.com/Crinsane/LaravelShoppingcart) package but it is slow to update to the latest versions of Laravel. I now use [hardevine/LaravelShoppingcart](https://github.com/hardevine/LaravelShoppingcart) which is a forked version that updates quicker.
 
-## Windows Users - money_format() issue
+## Money format
 
 1. In `config/cart.php` set the `thousand_seperator` to an empty string or you might get a 'non well formed numeric value encountered' error. It conflicts with `number_format`.
